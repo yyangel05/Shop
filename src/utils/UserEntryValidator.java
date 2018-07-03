@@ -17,11 +17,11 @@ public class UserEntryValidator implements Validator {
 		User user = (User) command;
 		
 		if(!StringUtils.hasLength(user.getUserId())) {
-			errors.rejectValue("userId", "error.required");
+			errors.rejectValue("userId", "error.required");  //error.required.user.userId의 메세지가 출력
 		}
 
 		if(!StringUtils.hasLength(user.getPassword())) {
-			errors.rejectValue("password", "error.required");
+			errors.rejectValue("password", "error.required"); //error.required.user.password의 메세지가 출력
 		}
 
 		if(!StringUtils.hasLength(user.getUserName())) {

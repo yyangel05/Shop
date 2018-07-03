@@ -24,7 +24,7 @@ public class LoginValidator implements Validator {
 		}
 		
 		if(errors.hasErrors()) {
-			errors.reject("error.input.user");
+			errors.reject("error.input.user"); 
 		}
 	}
 

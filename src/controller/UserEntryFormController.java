@@ -46,10 +46,10 @@ public class UserEntryFormController {
 	
 	@ModelAttribute
 	public User setUpForm() {
-		User user = new User();
+		User user = new User(); //user객체 생성
 		MessageSourceAccessor accessor = new MessageSourceAccessor(this.messageSource);
-		user.setUserId(accessor.getMessage("user.userId.default"));
-		user.setUserName(accessor.getMessage("user.userName.default"));
+		user.setUserId(accessor.getMessage("user.userId.default")); //입력폼에 미리 메세지를 나타나게 한다. placeholder과 비슷함
+		user.setUserName(accessor.getMessage("user.userName.default")); //입력폼에 미리 메세지를 나타나게 한다. placeholder과 비슷함
 		return user;
 	}
 	
