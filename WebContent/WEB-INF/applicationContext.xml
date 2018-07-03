@@ -24,12 +24,47 @@
 	</bean>
 	
 	<!-- Shop -->
-	<bean id="shopService" class="logic.ShopImpl" p:itemCatalog-ref="itemCatalog"/>
+	<!-- <bean id="shopService" class="logic.ShopImpl" p:itemCatalog-ref="itemCatalog"/> -->
+	<bean id="shopService" class="logic.ShopImpl">
+		<property name="itemCatalog">
+			<ref bean="itemCatalog"/>
+		</property>
+		<property name="userCatalog">
+			<ref bean="userCatalog"/>
+		</property>
+	</bean>
+	
 	
 	<!-- ItemCatalog -->
 	<bean id="itemCatalog" class="logic.ItemCatalogImpl" p:itemDao-ref="itemDao"/>
 	
 	<!-- ItemDao -->
 	<bean id="itemDao" class="dao.ItemDaoImpl" p:dataSource-ref="dataSource"/>
+	
+	<!-- UserCatalog -->
+	<bean id="userCatalog" class="logic.UserCatalogImpl">
+		<property name="userDao">
+			<ref bean="userDao"/>
+		</property>
+	</bean>
+	
+	<!-- UserDao -->
+	<bean id="userDao" class="dao.UserDaoImpl">
+		<property name="dataSource">
+			<ref bean="dataSource"/>
+		</property>
+	</bean>
+	
+	<!-- Validator -->
+	<bean id="loginValidator" class="utils.LoginValidator" />
+	
+	<!-- MessageSource -->
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<value>messages</value>
+			</list>
+		</property>
+	</bean>
 	
 </beans>	

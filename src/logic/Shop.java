@@ -8,4 +8,5 @@ public interface Shop {
 	
 	Item getItemByItemId(Integer itemId);
 
+	User getUserByUserIdAndPassword(String userId, String password);
 }
