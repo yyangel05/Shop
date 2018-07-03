@@ -38,7 +38,17 @@ public class CheckoutController {
 			throw new CartEmptyException("카트가 비어있습니다.");
 		}
 		
-		//유저 정보와 카트 안의 상품정보
+		//유저 정보와 카트 안의 상품정보를 설정
+		ModelAndView modelAndView = new ModelAndView();
+		modelAndView.addObject("loginUser", loginUser);
+		List<ItemSet> itemList = cart.getItemList();
+		modelAndView.addObject("itemList", itemList);
+		
+		//합계 금액을 설정
+		Integer totalAmount = this.shopService.calculateTotalAmount(itemList);
+		modelAndView.addObject("totalAmount", totalAmount);
+		
+		return modelAndView;
 	}
 
 }
