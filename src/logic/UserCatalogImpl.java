@@ -15,6 +15,13 @@ public class UserCatalogImpl implements UserCatalog {
 		// TODO Auto-generated method stub
 		return this.userDao.findByUserIdAndPassword(userId, password);
 	}
+
+	@Override
+	public void entryUser(User user) {
+		// TODO Auto-generated method stub
+		this.userDao.create(user);
+	}
+	
 	
 	
 	

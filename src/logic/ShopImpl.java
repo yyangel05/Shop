@@ -34,6 +34,13 @@ public class ShopImpl implements Shop {
 		// TODO Auto-generated method stub
 		return this.userCatalog.getUserByUserIdAndPassword(userId, password);
 	}
+
+	@Override
+	public void entryUser(User user) {
+		// TODO Auto-generated method stub
+		this.userCatalog.entryUser(user);
+	}
+	
 	
 	
 }

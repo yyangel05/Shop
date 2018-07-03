@@ -11,6 +11,7 @@
 				/index.html=indexController
 				/detail.html=detailController
 				/login.html=loginFormController
+				/userEntry.html=userEntryFormController
 			</value>
 		</property>
 	</bean>
@@ -25,6 +26,11 @@
 			p:shopService-ref="shopService" p:loginValidator-ref="loginValidator">
 	</bean>
 	
+	<bean id="userEntryFormController" class="controller.UserEntryFormController"
+			p:shopService-ref="shopService" p:userEntryValidator-ref="userEntryValidator"
+			p:messageSource-ref="messageSource">
+	</bean>
+	
 	<!-- ViewResolver -->
 	<bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="viewClass">
@@ -35,6 +41,12 @@
 		</property>
 		<property name="suffix">
 			<value>.jsp</value>
+		</property>
+	</bean>
+	
+	<bean id="resourceBundleViewResolver" class="org.springframework.web.servlet.view.ResourceBundleViewResolver">
+		<property name="basename">
+			<value>views</value>
 		</property>
 	</bean>
 

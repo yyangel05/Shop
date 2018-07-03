@@ -57,6 +57,7 @@
 	
 	<!-- Validator -->
 	<bean id="loginValidator" class="utils.LoginValidator" />
+	<bean id="userEntryValidator" class="utils.UserEntryValidator"/>
 	
 	<!-- MessageSource -->
 	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
