@@ -32,7 +32,7 @@ public class IndexController implements Controller {
 		
 		//반환값인 ModelAndView인스턴스 생성
 		ModelAndView modelAndView = new ModelAndView();
-		modelAndView.setViewName("/WEB-INF/jsp/index.jsp");
+		modelAndView.setViewName("index");
 		modelAndView.addAllObjects(model);
 		
 		return modelAndView;

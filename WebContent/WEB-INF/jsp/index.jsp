@@ -18,7 +18,7 @@
 	<c:forEach items="${itemList}" var="item">
 		<tr class="record">
 			<td align="center">${item.itemId}</td>
-			<td align="left">${item.itemName}</td>
+			<td align="left"><a href="detail.html?itemId=${item.itemId}">${item.itemName}</a></td>
 			<td align="right">${item.price}원</td>
 		</tr>
 	</c:forEach>
