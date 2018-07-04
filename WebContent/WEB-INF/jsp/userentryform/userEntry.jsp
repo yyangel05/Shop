@@ -8,9 +8,11 @@
 </head>
 <body>
 
+<%@ include file="/WEB-INF/jsp/cart_header.jsp"%>
+
 <div align="center" class="body">
 	<h2>유저 등록 화면</h2>
-	<form:form modelAttribute="user" method="post" action="userEntry.html">
+	<form:form modelAttribute="user" method="post" action="../userentryform/userEntry.html">
 		<spring:hasBindErrors name="user">
 			<font color="red">
 				<c:forEach items="${errors.globalErrors}" var="error">
@@ -83,6 +85,8 @@
 		</table>
 		
 	</form:form>
+	
+	<a href="index.html">■목록으로</a>
 
 </div>
 

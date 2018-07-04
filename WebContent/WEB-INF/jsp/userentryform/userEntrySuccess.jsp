@@ -8,6 +8,8 @@
 </head>
 <body>
 
+<%@ include file="/WEB-INF/jsp/cart_header.jsp"%>
+
 <div align="center" class="body">
 	<h2>유저 등록 완료 화면</h2>
 	<b><font color="red">유저 등록이 완료되었습니다.</font></b><br/>
@@ -47,10 +49,10 @@
 		</tr>
 	</table>
 	
-	<table>
-	
-	
-	</table>
+
+<br>
+<a href="../index/index.html">■목록으로</a><br>
+<a href="../checkout/checkout.html">■계산하러</a>
 	
 
 </div>
